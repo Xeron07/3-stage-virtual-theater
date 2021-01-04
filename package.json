@@ -1,0 +1,19 @@
+{
+  "name": "3-stage-virtual-theater",
+  "version": "1.0.0",
+  "description": "Virtual theater for share streaming ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Xeron07/3-stage-virtual-theater.git"
+  },
+  "author": "Md. Minhaz Uddin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Xeron07/3-stage-virtual-theater/issues"
+  },
+  "homepage": "https://github.com/Xeron07/3-stage-virtual-theater#readme"
+}
