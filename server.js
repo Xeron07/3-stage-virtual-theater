@@ -1,23 +1,30 @@
-const express=require("express");
-const bodyParser=require("body-parser");
-const cookieParser=require("cookie-parser");
-const csrf=require("csurf");
-const admin = require("firebase-admin");
+const app=require("fastify")({logger:true});
+const pg = require('fastify-pg');
 
-const serviceAccount = require("./config/service101.json");
+//db options
+const options={
+    connectionString: 'postgres://root:root@localhost:5432/postgres'
+};
 
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-  databaseURL:"https://theater-2k20-default-rtdb.firebaseio.com"
+//db configuration
+app.register(pg, options);
+
+
+
+
+//url link binding
+app.get("/",(req,res)=>{
+    res.send("Hello World");
 });
 
+//app.register(require("./routes/users"));
+const startServer=async()=>{
+   try{
+       await app.listen(5000);
+   }catch(err){
+       app.log.error(err);
+       process.exit(1);
+   }
+}
 
-const app=express();
-
-app.use(bodyParser.json());
-app.use(cookieParser());
-app.use(csrf({cookie:true}));
-
-app.listen("5000",(req,res)=>{
-    console.log("server started....");
-});
+startServer();
