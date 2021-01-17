@@ -1,0 +1,21 @@
+@media (min-width:200px) and (max-width: 600px) {
+    .loginCard {
+      width:75%;
+    }
+  }
+  
+  @media (min-width:601px) and (max-width: 990px) {
+    .loginCard {
+      width:45%;
+    }
+  }
+  
+  @media (min-width:991px) {
+    .loginCard {
+      width:25%;
+    }
+  }
+
+  .ui.card>.content, .ui.cards>.card>.content {
+ padding:0px;
+  }
